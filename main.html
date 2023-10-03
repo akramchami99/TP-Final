@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="formulaire.css">
+    <title>Création de bio</title>
+</head>
+<body>
+    <nav>
+        
+    </nav>
+
+    <main>
+        <div id="profils_box">
+            <div class="profil_design" id="new_profil"><i class="fa-solid fa-plus"></i></div>
+            <div class="profil_design user_profil"></div>
+        </div>
+    </main>
+
+    <div id="overlay">
+        <form action="" id="formulaire">
+            <div>
+                <div class="form_element">
+                    <label for="nom">Nom</label>
+                    <input type="text" placeholder="Chami" id="nom" required>
+                </div>
+                <div class="form_element">
+                    <label for="prenom">Prenom</label>
+                    <input type="text" placeholder="Anthony" id="prenom" required>
+                </div>
+                <div class="form_element">
+                    <label for="age">Âge</label>
+                    <input type="number" placeholder="18" id="age" required>
+                </div>
+                <div class="form_element">
+                    <label for="sexe">Sexe <span class="optional">(facultatif)</span></label>
+                    <div id="sexe_box">
+                        <div><input type="radio" id="sexe" name="sexe"> Homme</div>
+                        <div><input type="radio" id="sexe" name="sexe"> Femme</div>
+                        <div><input type="radio" id="sexe" name="sexe"> Non définie</div>
+                    </div>
+                </div>
+                <div class="form_element">
+                    <label for="presentation">Présentation</label>
+                    <textarea name="" id="presentation" cols="30" rows="8" required></textarea>
+                </div>
+                <div class="form_element">
+                    <div id="enregistrer_annulation_box">
+                        <input type="submit" value="Enregistrer" class="form_button">
+                        <button value="Annuler" class="form_button">Annuler</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="button_new_profil.js"></script>
+</body>
+</html>
