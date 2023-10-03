@@ -1,4 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/oxanium');
+*{
+    margin: 0;
+}
 
 header {
     height: 15vh;
@@ -7,6 +10,8 @@ header {
     color: white;
     display: flex;
     justify-content: center;
+    position: sticky;
+    top: 0; 
 }
 
 nav{
