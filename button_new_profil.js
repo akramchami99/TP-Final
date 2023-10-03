@@ -1,6 +1,6 @@
 main()
 
-/////////// Fonction du main
+////////// Fonction du main
 function main()
 {
     listener_pilote()
