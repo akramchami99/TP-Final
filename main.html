@@ -12,23 +12,20 @@
 <body>
     <header>
         <nav>
-            <div class="nav--title">Titre</div>
+            <div class="nav--title">Mettez vous en avant</div>
             <div class="nav--profils" onmouseover="showDropdown()" onmouseout="hideDropdown()">
                 <div class="profil-container">Profils</div>
                 <div class="dropdown-content" id="myDropdown">
-                    <div class="profil-container">Profil 1</div>
-                    <div href="#" class="profil-container">Profil 2</div>
-                    <div href="#" class="profil-container">Profil 3</div>
                 </div>
             </div>
-            <div class="nav--logo">Logo</div>
+            <div class="nav--logo"><i class="fa-solid fa-user"></i></div>
         </nav>    
     </header>
 
     <main>
         <div id="profils_box">
-            <div class="profil_design" id="new_profil"><i class="fa-solid fa-plus"></i></div>
-            <div class="profil_design user_profil"></div>
+            <div class="profil_design" id="new_profil"><i class="fa-solid fa-plus" aria-label="Logo de l'entreprise"></i></div>
+
         </div>
     </main>
 
@@ -68,6 +65,8 @@
             </div>
         </form>
     </div>
+
+    <script src="add_profil_name_in_nav.js"></script>
     <script src="button_new_profil.js"></script>
     <script src="Navbar.js"></script>
 </body>

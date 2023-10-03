@@ -5,7 +5,7 @@
 
 header {
     height: 15vh;
-    background: rgb(27, 18, 182);
+    background: rgb(12, 109, 162);
     font-family: 'Oxanium', sans-serif;
     color: white;
     display: flex;
@@ -40,15 +40,7 @@ nav > div {
 .nav--profils{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    
-}
-.dropdown-content {
-    display: none;
-    flex-direction: column;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    color: black;
+    justify-content: flex-start;
 }
 
 .profil-container{
@@ -58,8 +50,29 @@ nav > div {
     cursor: pointer;
     width: 15rem;
     height: 6rem;
+    min-height: 6rem;
     border-radius: 1rem;
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;  
 }
+
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    color: black;
+    border-radius: 1rem;
+}
+
+.nav--title
+{
+    width: fit-content;
+}
+
+.nav--logo
+{
+    font-size: 4em;
+}
+
