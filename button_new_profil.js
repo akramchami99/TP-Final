@@ -70,7 +70,7 @@ function processForm() {
       Présentation: presentation
     };
     
-    Users_data.push(formData)
+
     // Create a new result container
     const resultContainer = document.createElement("article");
     resultContainer.classList.add("profil_design")
@@ -122,7 +122,6 @@ function verification_bouton_appuyer(event)
         case "Enregistrer":
             event.preventDefault()
             processForm();
-            console.log(Users_data);
             return
     }
 }
