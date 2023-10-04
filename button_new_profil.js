@@ -42,7 +42,7 @@ function afficher_cacher_le_formulaire()
     }
 }
 
-
+const Users_data = [];
 // Function to retrieve form values, save them in an array, and display them
 function processForm() {
     // Get form elements
@@ -60,15 +60,22 @@ function processForm() {
     const presentation = document.getElementById("presentation").value;
   
     // Create an array to store the values
-    const formData = [nom, prenom, age, sexe, presentation];
-  
+    const formData = {
+      Nom: nom,
+      Prenom: prenom,
+      Âge: age,
+      Sexe: sexe,
+      Présentation: presentation
+    };
+    
+    Users_data.push(formData)
     // Create a new result container
-    const resultContainer = document.createElement("div");
+    const resultContainer = document.createElement("article");
     resultContainer.classList.add("profil_design")
     // Display the values in the new result container
-    for (let i = 0; i < formData.length; i++) {
+    for (const key in formData) {
       const para = document.createElement("p");
-      para.textContent = `${formDataLabels[i]}: ${formData[i]}`;
+      para.textContent = `${key}: ${formData[key]}`;
       resultContainer.appendChild(para);
     }
   
@@ -84,17 +91,8 @@ function processForm() {
       element.checked = false;
     }
     document.getElementById("presentation").value = "";
-  }
+}
   
-  // Add an event listener to the form to call the processForm function when submitted
-  const form = document.getElementById("formulaire");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent the form from submitting
-    processForm();
-  });
-  
-  // Labels for the form data
-  const formDataLabels = ["Nom", "Prenom", "Âge", "Sexe", "Présentation"];
   
 
 // Sert à verifier sur quel bouton l'utilisateur a appuyer dans le formulaire
@@ -112,6 +110,7 @@ function verification_bouton_appuyer(event)
         case "Enregistrer":
             event.preventDefault()
             processForm();
+            console.log(Users_data);
             return
     }
 }
