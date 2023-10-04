@@ -1,3 +1,4 @@
+
 function load_all_name_in_nav_bar()
 {
     // On selectionne la destination

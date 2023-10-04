@@ -6,7 +6,9 @@ function main()
     listener_pilote()
 }
 
+
 //////////// Lancement des pilotes au chargement de la page
+
 function listener_pilote()
 {
     let button_new_profil = document.querySelector("#new_profil"),
@@ -60,18 +62,32 @@ function processForm() {
     const presentation = document.getElementById("presentation").value;
   
     // Create an array to store the values
-    const formData = [nom, prenom, age, sexe, presentation];
-  
+    const formData = {
+      Nom: nom,
+      Prenom: prenom,
+      Âge: age,
+      Sexe: sexe,
+      Présentation: presentation
+    };
+    
+    Users_data.push(formData)
     // Create a new result container
-    const resultContainer = document.createElement("div");
+    const resultContainer = document.createElement("article");
     resultContainer.classList.add("profil_design")
     // Display the values in the new result container
-    for (let i = 0; i < formData.length; i++) {
+    const classList = ['user_nom','user_prenom','user_age','user_sexe','user_presentation']
+    let i = 0
+    for (const key in formData) {
       const para = document.createElement("p");
-      para.textContent = `${formDataLabels[i]}: ${formData[i]}`;
+      const value = document.createElement("p");
+      value.classList.add(classList[i]);
+      i++;
+      value.textContent = `${formData[key]}`
+      para.textContent = `${key}: `;
+      para.appendChild(value);
       resultContainer.appendChild(para);
     }
-  
+    
     // Append the new result container to the main results container
     const mainResultContainer = document.getElementById("profils_box");
     mainResultContainer.appendChild(resultContainer);
@@ -84,17 +100,11 @@ function processForm() {
       element.checked = false;
     }
     document.getElementById("presentation").value = "";
+    afficher_cacher_le_formulaire()
+    load_all_name_in_nav_bar()
   }
   
-  // Add an event listener to the form to call the processForm function when submitted
-  const form = document.getElementById("formulaire");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent the form from submitting
-    processForm();
-  });
-  
-  // Labels for the form data
-  const formDataLabels = ["Nom", "Prenom", "Âge", "Sexe", "Présentation"];
+
   
 
 // Sert à verifier sur quel bouton l'utilisateur a appuyer dans le formulaire
@@ -112,6 +122,7 @@ function verification_bouton_appuyer(event)
         case "Enregistrer":
             event.preventDefault()
             processForm();
+            console.log(Users_data);
             return
     }
 }
