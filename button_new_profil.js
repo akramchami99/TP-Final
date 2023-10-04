@@ -73,12 +73,19 @@ function processForm() {
     const resultContainer = document.createElement("article");
     resultContainer.classList.add("profil_design")
     // Display the values in the new result container
+    const classList = ['user_nom','user_prenom','user_age','user_sexe','user_presentation']
+    let i = 0
     for (const key in formData) {
       const para = document.createElement("p");
-      para.textContent = `${key}: ${formData[key]}`;
+      const value = document.createElement("p");
+      value.classList.add(classList[i]);
+      i++;
+      value.textContent = `${formData[key]}`
+      para.textContent = `${key}: `;
+      para.appendChild(value);
       resultContainer.appendChild(para);
     }
-  
+    
     // Append the new result container to the main results container
     const mainResultContainer = document.getElementById("profils_box");
     mainResultContainer.appendChild(resultContainer);
@@ -91,7 +98,9 @@ function processForm() {
       element.checked = false;
     }
     document.getElementById("presentation").value = "";
-}
+    afficher_cacher_le_formulaire()
+    load_all_name_in_nav_bar()
+  }
   
   
 
@@ -114,3 +123,4 @@ function verification_bouton_appuyer(event)
             return
     }
 }
+

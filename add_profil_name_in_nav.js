@@ -1,5 +1,3 @@
-// import { Users_data } from "./button_new_profil"
-
 
 function load_all_name_in_nav_bar()
 {
