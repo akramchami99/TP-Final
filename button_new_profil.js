@@ -60,7 +60,9 @@ function processForm() {
       }
     }
     const presentation = document.getElementById("presentation").value.trim();
-  
+    const imageInput = document.getElementById("image");
+    const imageFile = imageInput.files[0];
+
 
     if (nom === "" || prenom === "" || age === "" || presentation === "") {
       alert("Veuillez Remplir tous les champs du formulaire avant de soumettre");
@@ -68,6 +70,7 @@ function processForm() {
     }
     // Create an array to store the values
     const formData = {
+      
       Nom: nom,
       Prenom: prenom,
       Âge: age,
@@ -77,7 +80,10 @@ function processForm() {
       formData.Sexe = sexe;
     }
     formData.Présentation = presentation;
-    
+    if(imageFile !== ""){
+      formData.Image = imageFile
+    }
+   
 
     // Create a new result container
     const resultContainer = document.createElement("article");
@@ -88,18 +94,29 @@ function processForm() {
     for (const key in formData) {
       const para = document.createElement("p");
       const value = document.createElement("p");
+      const imageElement = document.createElement("img");
       if (key === 'Sexe') {
         value.classList.add('user_sexe');
       }else{
         value.classList.add(classList[i]);
         i++;
       }
-      value.textContent = `${formData[key]}`
-      para.textContent = `${key}: `;
-      para.appendChild(value);
-      resultContainer.appendChild(para);
+      if (key === "Image"){
+        if(imageFile){
+          para.textContent = `${key}: `;
+          imageElement.src = URL.createObjectURL(formData[key]);
+          para.appendChild(value);
+          para.appendChild(imageElement);
+          resultContainer.appendChild(para);
+        }
+      }else{
+        value.textContent = `${formData[key]}`
+        para.textContent = `${key}: `;
+        para.appendChild(value);
+        resultContainer.appendChild(para);
+      }
     }
-    
+  
     // Append the new result container to the main results container
     const mainResultContainer = document.getElementById("profils_box");
     mainResultContainer.appendChild(resultContainer);
@@ -112,6 +129,7 @@ function processForm() {
       element.checked = false;
     }
     document.getElementById("presentation").value = "";
+    imageInput.value = "";
     afficher_cacher_le_formulaire()
     load_all_name_in_nav_bar()
     process_search_profil()
