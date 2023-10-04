@@ -12,18 +12,17 @@
 <body>
     <header>
         <nav>
-            <div class="nav--title">Mettez vous en avant</div>
             <div class="nav--profils" onmouseover="showDropdown()" onmouseout="hideDropdown()">
                 <div class="profil-container">Profils</div>
-                <div class="dropdown-content" id="myDropdown">
-                </div>
+                <div class="dropdown-content" id="myDropdown"></div>
             </div>
-            <div><input type="search" id="champ_de_recherche"></div>
+            <div class="nav--title">Mettez vous en avant</div>
             <div class="nav--logo"><i class="fa-solid fa-user"></i></div>
         </nav>    
     </header>
 
     <main>
+        <div><input type="search" id="champ_de_recherche" placeholder="Recherche par Prénom..."></div>
         <div id="profils_box">
             <article class="profil_design" id="new_profil"><i class="fa-solid fa-plus" aria-label="Logo de l'entreprise"></i></article>
         </div>

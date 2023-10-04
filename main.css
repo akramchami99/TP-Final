@@ -12,6 +12,16 @@ main
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding-top: 3rem;
+}
+
+#champ_de_recherche{
+    width: 25rem;
+    height: 3rem;
+    border-radius: 1rem;
+    border: none;
+    padding-left : 2rem
 }
 
 #profils_box
