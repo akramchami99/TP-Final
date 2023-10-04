@@ -95,6 +95,7 @@ function processForm() {
       const para = document.createElement("p");
       const value = document.createElement("p");
       const imageElement = document.createElement("img");
+      imageElement.classList.add("image")
       if (key === 'Sexe') {
         value.classList.add('user_sexe');
       }else{
@@ -103,9 +104,8 @@ function processForm() {
       }
       if (key === "Image"){
         if(imageFile){
-          para.textContent = `${key}: `;
+          para.classList.add("Image-Container");
           imageElement.src = URL.createObjectURL(formData[key]);
-          para.appendChild(value);
           para.appendChild(imageElement);
           resultContainer.appendChild(para);
         }
