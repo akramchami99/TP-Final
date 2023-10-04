@@ -34,14 +34,16 @@ nav > div {
 }
 
 .nav--profils:hover{
-    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.532) inset,
-                5px 5px 5px rgba(0, 0, 0, 0.804);
+    /* box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.532) inset,
+                5px 5px 5px rgba(0, 0, 0, 0.804); */
+    background: rgb(10, 90, 133);
 }
 
 .nav--profils{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    transition: .2s;
 }
 
 .profil-container, .profil-container-empty{
@@ -70,6 +72,13 @@ nav > div {
 .nav--title
 {
     width: fit-content;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: .5s;
+}
+
+.nav--title:hover{
+    background: rgb(10, 90, 133);
 }
 
 .nav--logo

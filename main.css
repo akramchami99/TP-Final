@@ -1,5 +1,11 @@
+@import url('https://fonts.cdnfonts.com/css/oxanium');
+
 *{margin: 0; padding: 0;}
-body{height: 100vh; background-color: rgba(128, 128, 128, 0.274);}
+body{
+    height: 100vh; 
+    background-color: rgba(128, 128, 128, 0.274);
+    font-family: 'Oxanium', sans-serif;
+}
 
 
 
@@ -44,9 +50,9 @@ a[href="main.html"]{
 {
     width: 260px;
     min-height: 360px;
-    background-color: rgba(79, 178, 232, 0.774);
+    background: rgb(12, 109, 162);
     border-radius: 20px;
-    box-shadow: 5px 5px 5px black;
+    /* box-shadow: 5px 5px 5px black; */
     transition: 0.2s;
     outline: 3px solid black;
     color: white;
@@ -62,7 +68,7 @@ a[href="main.html"]{
 .profil_design:hover
 {
     cursor: pointer;
-    box-shadow: 5px 5px 20px black inset;
+    /* box-shadow: 5px 5px 20px black inset; */
     transform: scale(1.05);
 }
 
@@ -85,7 +91,7 @@ a[href="main.html"]{
 /* Classe d'injection */
 .focus_on
 {
-    box-shadow: 5px 5px 20px black inset;
+    /* box-shadow: 5px 5px 20px black inset; */
     transform: scale(1.05);
 }
 
