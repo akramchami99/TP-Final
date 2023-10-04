@@ -37,12 +37,20 @@ main
     box-shadow: 5px 5px 5px black;
     transition: 0.2s;
     outline: 3px solid black;
+    color: white;
+}
+
+
+.profil_design > p {
+    margin: 2rem;
 }
 
 .profil_design:hover
 {
     cursor: pointer;
     box-shadow: 5px 5px 20px black inset;
+    width: 320px;
+    height: 420px;
 }
 
 /* Pour la boite new_profil */
