@@ -30,27 +30,29 @@ main
 
 .profil_design
 {
-    width: 300px;
-    height: 400px;
+    width: 260px;
+    height: 360px;
     background-color: rgba(79, 178, 232, 0.774);
     border-radius: 20px;
     box-shadow: 5px 5px 5px black;
     transition: 0.2s;
     outline: 3px solid black;
     color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
 }
 
 
-.profil_design > p {
-    margin: 2rem;
-}
+
 
 .profil_design:hover
 {
     cursor: pointer;
     box-shadow: 5px 5px 20px black inset;
-    width: 320px;
-    height: 420px;
+    width: 280px;
+    height: 380px;
 }
 
 /* Pour la boite new_profil */
