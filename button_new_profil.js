@@ -71,9 +71,12 @@ function processForm() {
       Nom: nom,
       Prenom: prenom,
       Âge: age,
-      Sexe: sexe,
-      Présentation: presentation
     };
+
+    if (sexe !== "") {
+      formData.Sexe = sexe;
+    }
+    formData.Présentation = presentation;
     
 
     // Create a new result container
