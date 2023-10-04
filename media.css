@@ -1,0 +1,48 @@
+@media (max-width: 750px){
+    .profil-container, .nav--title, .nav--logo{
+        font-size: 25px;
+    }
+
+    #formulaire{
+        width: 25rem;
+        height: 40rem;
+    }
+}
+
+@media(max-width: 425px){
+    header{
+        height: fit-content;
+    }
+    nav{
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+    .nav--logo, .nav--title, .profil-container{
+        height: 50px;
+    }
+    #champ_de_recherche{
+        width: 15rem;
+    }
+    .profil_design{
+        width: 12rem;
+        height: 15rem;
+    }
+
+    #formulaire{
+        width: 15rem;
+        height: 25rem;
+    }
+
+    #formulaire > div{
+        padding: 15px;
+    }
+    
+    #formulaire label{
+        font-size: 15px;
+    }
+
+    #formulaire > div input{
+        height: 10px;
+        width: 100px;
+    }
+}
