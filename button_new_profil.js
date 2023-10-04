@@ -1,12 +1,12 @@
 main()
 
-/////////// Fonction du main
+////////// Fonction du main
 function main()
 {
     listener_pilote()
 }
 
-/////////// Lancement des pilotes au chargement de la page
+//////////// Lancement des pilotes au chargement de la page
 function listener_pilote()
 {
     let button_new_profil = document.querySelector("#new_profil"),
