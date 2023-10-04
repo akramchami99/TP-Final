@@ -5,7 +5,7 @@
 
     #formulaire{
         width: 25rem;
-        height: 40rem;
+        height: fit-content;
     }
 }
 
@@ -26,23 +26,73 @@
     .profil_design{
         width: 12rem;
         height: 15rem;
+        min-height: 15rem;
     }
 
     #formulaire{
-        width: 15rem;
-        height: 25rem;
+        width: 80%;
+        height: fit-content;
     }
 
     #formulaire > div{
         padding: 15px;
+        gap: 10px;
     }
     
-    #formulaire label{
+    #formulaire label, #formulaire > div legend{
         font-size: 15px;
     }
 
     #formulaire > div input{
-        height: 10px;
+        height: 8px;
         width: 100px;
+        font-size: 15px;
+    }
+
+    #formulaire > div input[type="number"]{
+        width: 50px;
+    }
+
+    #formulaire > div input[type="file"]{
+        height: 25px;
+        width: fit-content;
+        padding: 0;
+        font-size: 12px;
+    }
+
+    #formulaire > div input[type="radio"]{
+        width: 10px;
+        height: 10px;
+    }
+
+    .optional{
+        font-size: 12px;
+    }
+
+    #sexe_box > div{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: fit-content;
+        gap: 10px;
+    }
+
+    #sexe_box > div > input{
+        width: fit-content;
+    }
+
+    #presentation{
+        width: 90%;
+        height: 40px;
+        max-height: 40px;
+        max-width: 90%;
+        min-width: 90%;
+        min-height: 40px;
+        font-size: 13px;
+    }
+
+    .form_element{
+        display: flex;
+        flex-wrap: wrap;
     }
 }
