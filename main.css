@@ -49,6 +49,8 @@ main
 {
     cursor: pointer;
     box-shadow: 5px 5px 20px black inset;
+    width: 320px;
+    height: 420px;
 }
 
 /* Pour la boite new_profil */
