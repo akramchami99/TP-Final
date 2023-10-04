@@ -62,7 +62,7 @@ function processForm() {
     const presentation = document.getElementById("presentation").value.trim();
   
 
-    if (nom === "" || prenom === "" || age === "" || sexe === "" || presentation === "") {
+    if (nom === "" || prenom === "" || age === "" || presentation === "") {
       alert("Veuillez Remplir tous les champs du formulaire avant de soumettre");
       return; 
     }
