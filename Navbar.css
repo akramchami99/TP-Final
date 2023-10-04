@@ -44,7 +44,7 @@ nav > div {
     justify-content: flex-start;
 }
 
-.profil-container{
+.profil-container, .profil-container-empty{
     font-size: 2rem;
 
     
