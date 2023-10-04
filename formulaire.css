@@ -34,10 +34,16 @@
     flex-direction: column;
 }
 
-label
+label, legend
 {
     font-size: 25px;
     font-weight: 600;
+}
+
+label[class="light"]
+{
+    font-weight: 100;
+    font-size: 20px;
 }
 
 input
@@ -94,4 +100,9 @@ input[type="number"]
 #enregistrer_annulation_box .form_button:hover
 {
     cursor: pointer;
+}
+
+/* Supression des style pré-définie */
+fieldset{
+    border: none;
 }

@@ -16,7 +16,7 @@
                 <div class="profil-container">Profils</div>
                 <div class="dropdown-content" id="myDropdown"></div>
             </div>
-            <div class="nav--title">Mettez vous en avant</div>
+            <div class="nav--title"><a href="main.html">Mettez vous en avant</a></div>
             <div class="nav--logo"><i class="fa-solid fa-user"></i></div>
         </nav>    
     </header>
@@ -24,7 +24,7 @@
     <main>
         <div><input type="search" id="champ_de_recherche" placeholder="Recherche par Prénom..."></div>
         <div id="profils_box">
-            <article class="profil_design" id="new_profil"><i class="fa-solid fa-plus" aria-label="Logo de l'entreprise"></i></article>
+            <article class="profil_design" id="new_profil"><i class="fa-solid fa-plus"></i></article>
         </div>
     </main>
 
@@ -43,14 +43,23 @@
                     <label for="age">Âge</label>
                     <input type="number" placeholder="18" id="age" required>
                 </div>
-                <div class="form_element">
-                    <label for="sexe">Sexe <span class="optional">(facultatif)</span></label>
+                <fieldset class="form_element">
+                    <legend>Sexe <span class="optional">(facultatif)</span></legend>
                     <div id="sexe_box">
-                        <div><input type="radio" id="homme" name="sexe" value="Homme"> Homme</div>
-                        <div><input type="radio" id="femme" name="sexe" value="Femme"> Femme</div>
-                        <div><input type="radio" id="non-défini" name="sexe" value="Non Défini"> Non définie</div>
+                        <div>
+                            <input type="radio" id="homme" name="sexe" value="Homme">
+                            <label for="homme" class="light">Homme</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="femme" name="sexe" value="Femme">
+                            <label for="femme" class="light">Femme</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="non-défini" name="sexe" value="Non Défini">
+                            <label for="non-défini" class="light">Non définie</label>
+                        </div>
                     </div>
-                </div>
+                </fieldset>
                 <div class="form_element">
                     <label for="presentation">Présentation</label>
                     <textarea name="" id="presentation" cols="30" rows="8" required></textarea>

@@ -2,7 +2,7 @@
 body{height: 100vh; background-color: rgba(128, 128, 128, 0.274);}
 
 
-/*A supprimer en haut*/
+
 
 
 
@@ -14,6 +14,11 @@ main
     align-items: center;
     flex-direction: column;
     padding-top: 3rem;
+}
+
+a[href="main.html"]{
+    color: white;
+    text-decoration: none;
 }
 
 #champ_de_recherche{
