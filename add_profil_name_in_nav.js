@@ -11,7 +11,7 @@ function load_all_name_in_nav_bar()
     // S'il n'y a pas encore de profil rajouter
     if(all_prenom.length == 0)
     {
-        let template = `<div class="profil-container">(vide)</div>`
+        let template = `<div class="profil-container-empty">(vide)</div>`
         destination.innerHTML = template
     }
     else
@@ -23,6 +23,9 @@ function load_all_name_in_nav_bar()
                 destination.innerHTML += template
             })
     }
+
+    // Une fois que les noms de profils ont été injecter, on ajoute un listener pour le survol de la souris sur les noms
+    
 }
 
 load_all_name_in_nav_bar()
