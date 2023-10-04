@@ -55,6 +55,13 @@ main
     height: 380px;
 }
 
+.user_presentation
+{
+    max-height: 120px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
 /* Pour la boite new_profil */
 #new_profil
 {
