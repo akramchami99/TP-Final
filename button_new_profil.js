@@ -48,9 +48,9 @@ function afficher_cacher_le_formulaire()
 // Function to retrieve form values, save them in an array, and display them
 function processForm() {
     // Get form elements
-    const nom = document.getElementById("nom").value;
-    const prenom = document.getElementById("prenom").value;
-    const age = document.getElementById("age").value;
+    const nom = document.getElementById("nom").value.trim();
+    const prenom = document.getElementById("prenom").value.trim();
+    const age = document.getElementById("age").value.trim();
     const sexeElements = document.getElementsByName("sexe");
     let sexe = "";
     for (const element of sexeElements) {
@@ -59,8 +59,13 @@ function processForm() {
         break;
       }
     }
-    const presentation = document.getElementById("presentation").value;
+    const presentation = document.getElementById("presentation").value.trim();
   
+
+    if (nom === "" || prenom === "" || age === "" || sexe === "" || presentation === "") {
+      alert("Veuillez Remplir tous les champs du formulaire avant de soumettre");
+      return; 
+    }
     // Create an array to store the values
     const formData = {
       Nom: nom,
@@ -102,6 +107,7 @@ function processForm() {
     document.getElementById("presentation").value = "";
     afficher_cacher_le_formulaire()
     load_all_name_in_nav_bar()
+    process_search_profil()
   }
   
 
