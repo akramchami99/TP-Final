@@ -63,8 +63,6 @@ a[href="main.html"]{
 {
     cursor: pointer;
     box-shadow: 5px 5px 20px black inset;
-    /* width: 280px;
-    height: 380px; */
     transform: scale(1.05);
 }
 
@@ -88,8 +86,7 @@ a[href="main.html"]{
 .focus_on
 {
     box-shadow: 5px 5px 20px black inset;
-    width: 280px;
-    height: 380px;
+    transform: scale(1.05);
 }
 
 .image {
