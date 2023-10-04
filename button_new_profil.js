@@ -83,13 +83,17 @@ function processForm() {
     const resultContainer = document.createElement("article");
     resultContainer.classList.add("profil_design")
     // Display the values in the new result container
-    const classList = ['user_nom','user_prenom','user_age','user_sexe','user_presentation']
+    const classList = ['user_nom','user_prenom','user_age','user_presentation']
     let i = 0
     for (const key in formData) {
       const para = document.createElement("p");
       const value = document.createElement("p");
-      value.classList.add(classList[i]);
-      i++;
+      if (key === 'Sexe') {
+        value.classList.add('user_sexe');
+      }else{
+        value.classList.add(classList[i]);
+        i++;
+      }
       value.textContent = `${formData[key]}`
       para.textContent = `${key}: `;
       para.appendChild(value);
