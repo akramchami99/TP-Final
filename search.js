@@ -1,41 +1,53 @@
-const   destination = document.querySelector("#profils_box"),
-        search_box = document.querySelector("#champ_de_recherche"),
-        all_profils = document.querySelectorAll(".profil_design");
 
-search_box.addEventListener("keyup", update_profil_list)
+process_search_profil()
 
-// Quand l'utilisateur frappe au clavier dans le champ de recherche
-function update_profil_list()
+function process_search_profil()
 {
-    // On rend invisible tout les profils, de base
-    all_profils.forEach(profil => 
-        {
-            profil.style.display = "none"
-        })
+    const search_box = document.querySelector("#champ_de_recherche")
+    listener_update_profil_list()
 
-    // On verifie s'il y a des caractère dans le champ de recherche
-    // Si oui
-    if(search_box.value != "")
+    function listener_update_profil_list()
     {
-        // On va rendre visible tout les profils qui ont pour nom : le nom rentrer dans le champ de saisie
-        let all_prenom = document.querySelectorAll(".user_prenom")
-        all_prenom.forEach(prenom => 
-            {
-                let value_prenom = prenom.innerHTML
-                if(value_prenom.toLowerCase().includes(search_box.value.toLowerCase()))
-                {
-                    prenom.closest(".profil_design").style.display = "flex"
-                }
-            }) 
+        search_box.addEventListener("keyup", update_profil_list)
     }
-    // Si non
-    else
+
+    // Quand l'utilisateur frappe au clavier dans le champ de recherche
+    function update_profil_list()
     {
-        // On remet en visible tout les profils
+        let all_profils = document.querySelectorAll(".profil_design")
+
+        // On rend invisible tout les profils, de base
         all_profils.forEach(profil => 
             {
-                profil.style.display = "flex"
+                profil.style.display = "none"
             })
+
+        // On verifie s'il y a des caractère dans le champ de recherche
+        // Si oui
+        if(search_box.value != "")
+        {
+            // On va rendre visible tout les profils qui ont pour nom : le nom rentrer dans le champ de saisie
+            let all_prenom = document.querySelectorAll(".user_prenom")
+            all_prenom.forEach(prenom => 
+                {
+                    let value_prenom = prenom.innerHTML
+                    if(value_prenom.toLowerCase().includes(search_box.value.toLowerCase()))
+                    {
+                        prenom.closest(".profil_design").style.display = "flex"
+                    }
+                }) 
+        }
+        // Si non
+        else
+        {
+            // On remet en visible tout les profils
+            all_profils.forEach(profil => 
+                {
+                    profil.style.display = "flex"
+                })
+        }
     }
-    
 }
+
+
+
