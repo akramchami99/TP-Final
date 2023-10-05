@@ -62,7 +62,7 @@ function processForm() {
     const imageInput = document.getElementById("image");
     const imageFile = imageInput.files[0];
 
-    // Making some inputs obligatry 
+    // Making some inputs required 
     if (nom === "" || prenom === "" || age === "" || presentation === "") {
       alert("Veuillez Remplir tous les champs du formulaire avant de soumettre");
       return; 
@@ -107,15 +107,14 @@ function processForm() {
           para.classList.add("Image-Container");
           imageElement.src = URL.createObjectURL(formData[key]);
           imageElement.alt = `Photo de ${prenom}` ;
-          para.appendChild(imageElement);
-          resultContainer.appendChild(para);
+          para.appendChild(imageElement);   
         }
       }else{
         value.textContent = `${formData[key]}`;
         para.textContent = `${key}: `;
         para.appendChild(value);
-        resultContainer.appendChild(para);
       }
+      resultContainer.appendChild(para);
     }
   
     // Append the new result container to the main results container
