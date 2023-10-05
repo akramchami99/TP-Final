@@ -103,7 +103,7 @@ function processForm() {
     let i = 0;
 
     for (const key in formData) {
-      const para = document.createElement("p");
+      const para = document.createElement("div");
       const value = document.createElement("p");
       const imageElement = document.createElement("img");
       imageElement.classList.add("image");
