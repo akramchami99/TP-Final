@@ -12,10 +12,7 @@ function main()
 function listener_pilote()
 {
     let button_new_profil = document.querySelector("#new_profil"),
-        button_enregistrer_annuler_formulaire = document.querySelectorAll(".form_button");
-
-
-        
+    button_enregistrer_annuler_formulaire = document.querySelectorAll(".form_button");
 
     button_enregistrer_annuler_formulaire.forEach(bouton => 
         {
@@ -45,9 +42,10 @@ function afficher_cacher_le_formulaire()
 }
 
 
-// Function to retrieve form values, save them in an array, and display them
+// Fonction qui sert a traiter les valeurs du formulaire et de les afficher
 function processForm() {
-    // Get form elements
+
+    // Get values from the form 
     const nom = document.getElementById("nom").value.trim();
     const prenom = document.getElementById("prenom").value.trim();
     const age = document.getElementById("age").value.trim();
@@ -63,14 +61,13 @@ function processForm() {
     const imageInput = document.getElementById("image");
     const imageFile = imageInput.files[0];
 
-
+    // Making some inputs obligatry 
     if (nom === "" || prenom === "" || age === "" || presentation === "") {
       alert("Veuillez Remplir tous les champs du formulaire avant de soumettre");
       return; 
     }
     // Create an array to store the values
     const formData = {
-      
       Nom: nom,
       Prenom: prenom,
       Âge: age,
@@ -87,15 +84,16 @@ function processForm() {
 
     // Create a new result container
     const resultContainer = document.createElement("article");
-    resultContainer.classList.add("profil_design")
+    resultContainer.classList.add("profil_design");
     // Display the values in the new result container
-    const classList = ['user_nom','user_prenom','user_age','user_presentation']
-    let i = 0
+    const classList = ['user_nom','user_prenom','user_age','user_presentation'];
+    let i = 0;
+
     for (const key in formData) {
       const para = document.createElement("p");
       const value = document.createElement("p");
       const imageElement = document.createElement("img");
-      imageElement.classList.add("image")
+      imageElement.classList.add("image");
       if (key === 'Sexe') {
         value.classList.add('user_sexe');
       }else{
@@ -106,11 +104,12 @@ function processForm() {
         if(imageFile){
           para.classList.add("Image-Container");
           imageElement.src = URL.createObjectURL(formData[key]);
+          imageElement.alt = `Photo de ${prenom}` ;
           para.appendChild(imageElement);
           resultContainer.appendChild(para);
         }
       }else{
-        value.textContent = `${formData[key]}`
+        value.textContent = `${formData[key]}`;
         para.textContent = `${key}: `;
         para.appendChild(value);
         resultContainer.appendChild(para);
@@ -130,10 +129,10 @@ function processForm() {
     }
     document.getElementById("presentation").value = "";
     imageInput.value = "";
-    afficher_cacher_le_formulaire()
-    load_all_name_in_nav_bar()
-    process_search_profil()
-  }
+    afficher_cacher_le_formulaire();
+    load_all_name_in_nav_bar();
+    process_search_profil();
+}
   
 
   
@@ -141,7 +140,7 @@ function processForm() {
 // Sert à verifier sur quel bouton l'utilisateur a appuyer dans le formulaire
 function verification_bouton_appuyer(event)
 {
-    let value_bouton = event.target.value
+    let value_bouton = event.target.value;
     switch(value_bouton)
     {
         // S'il clique sur annulation, on fait disparaitre le formulaire
@@ -151,7 +150,7 @@ function verification_bouton_appuyer(event)
             return
         // S'il clique sur enregistrer, on lance la fonction pour injecter un élément dans le dom, et on cache le formulaire
         case "Enregistrer":
-            event.preventDefault()
+            event.preventDefault();
             processForm();
             return
     }
