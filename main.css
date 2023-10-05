@@ -41,6 +41,10 @@ main
 
 /* Pour */
 
+#profils_box > button {
+    border: none;
+}
+
 .profil_design
 {
     width: 260px;

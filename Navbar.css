@@ -33,11 +33,6 @@ nav > div {
     justify-content: center;
 }
 
-.nav--profils:hover{
-    /* box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.532) inset,
-                5px 5px 5px rgba(0, 0, 0, 0.804); */
-    background: rgb(10, 90, 133);
-}
 
 .nav--profils{
     display: flex;
@@ -46,10 +41,18 @@ nav > div {
     transition: .2s;
 }
 
+.nav--profils > button {
+    background: rgb(12, 109, 162);  
+    border: none;
+    color: white;
+}
+
+.nav--profils > button:hover{
+    background: rgb(10, 90, 133);
+}
+
 .profil-container, .profil-container-empty{
     font-size: 2rem;
-
-    
     cursor: pointer;
     width: 15rem;
     height: 6rem;
@@ -58,6 +61,7 @@ nav > div {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Oxanium', sans-serif;
 }
 
 .dropdown-content {
