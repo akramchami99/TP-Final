@@ -20,12 +20,24 @@ function listener_pilote()
             bouton.addEventListener("click", verification_bouton_appuyer)
         })
 
+    // Pour le clique à la souris
     button_new_profil.removeEventListener("click", afficher_cacher_le_formulaire)
     button_new_profil.addEventListener("click", afficher_cacher_le_formulaire)
+    // Pour la touche entrée au clavier ( pour les aveugles )
+    button_new_profil.removeEventListener("keyup", controle_key_press)
+    button_new_profil.addEventListener("keyup", controle_key_press)
 }
 
-/////////// Fonction des pilotes
+function controle_key_press(event)
+{
+  if(event.which === 13) // la touche enter
+  {
+    afficher_cacher_le_formulaire()
+  }
+}
 
+
+/////////// Fonction des pilotes
 // Sert à afficher ou cacher le formulaire
 function afficher_cacher_le_formulaire()
 {
