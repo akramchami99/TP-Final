@@ -16,12 +16,12 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav aria-label="Barre de Navigation">
             <div class="nav--profils" onmouseover="showDropdown()" onmouseout="hideDropdown()">
                 <div class="profil-container" tabindex="0">Profils</div>
                 <div class="dropdown-content" id="myDropdown"></div>
             </div>
-            <div class="nav--title"><a href="main.html">Mettez vous en avant</a></div>
+            <div class="nav--title"><a href="main.html" title="Retour à la page principal">Mettez vous en avant</a></div>
             <div class="nav--logo"><i class="fa-solid fa-user"></i></div>
         </nav>    
     </header>
@@ -32,7 +32,7 @@
             <input type="search" id="champ_de_recherche" placeholder="Recherche par Prénom...">
         </div>
         <div id="profils_box">
-            <article class="profil_design" id="new_profil" tabindex="0" role="button"><i class="fa-solid fa-plus"></i></article>
+            <article class="profil_design" id="new_profil" tabindex="0" role="button" title="Ajouter Un projet"><i class="fa-solid fa-plus"></i></article>
         </div>
     </main>
 
@@ -72,10 +72,10 @@
 
                 <div class="form_element">
                     <label for="presentation">Présentation</label>
-                    <textarea name="" id="presentation" cols="30" rows="5" placeholder="Présentez-vous"></textarea>
+                    <textarea name="presentation" id="presentation" cols="30" rows="5" placeholder="Présentez-vous"></textarea>
                 </div>
                 <div class="form_element">
-                    <label for="Image">Image</label>
+                    <label for="image">Image</label>
                     <input type="file" id="image">
                 </div>
                 <div class="form_element">

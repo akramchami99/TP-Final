@@ -97,6 +97,7 @@ function processForm() {
     // Create a new result container
     const resultContainer = document.createElement("article");
     resultContainer.classList.add("profil_design");
+    resultContainer.title = `Profil de : ${prenom}`;
     // Display the values in the new result container
     const classList = ['user_nom','user_prenom','user_age','user_presentation'];
     let i = 0;
