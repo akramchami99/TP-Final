@@ -15,6 +15,7 @@ function focus_on_this_profil(event)
 
 function remove_focus_on_this_profil(event)
 {
+    console.log(event.target)
     let all_user_prenom = document.querySelectorAll(".user_prenom")
     let prenom_under_mouse = event.target.innerHTML
     all_user_prenom.forEach(prenom => 
@@ -47,7 +48,7 @@ function load_all_name_in_nav_bar()
         // Pour chaque prénom on créé u template qu'on injecte dans la destination
         all_prenom.forEach(prenom => 
             {
-                let template = `<div class="profil-container">${prenom.innerHTML}</div>`
+                let template = `<div class="profil-container" tabindex="0">${prenom.innerHTML}</div>`
                 destination.innerHTML += template
             })
     }
@@ -57,11 +58,19 @@ function load_all_name_in_nav_bar()
     // On ajoute un listener au survol
     all_profils_names.forEach(profil => 
         {
+            // Pour la souris
             profil.removeEventListener("mouseover", focus_on_this_profil)
             profil.addEventListener("mouseover", focus_on_this_profil)
 
             profil.removeEventListener("mouseout", remove_focus_on_this_profil)
             profil.addEventListener("mouseout", remove_focus_on_this_profil)
+
+            // Pour le clavier      
+            profil.removeEventListener("focus", focus_on_this_profil)
+            profil.addEventListener("focus", focus_on_this_profil)
+
+            profil.removeEventListener("blur", remove_focus_on_this_profil)
+            profil.addEventListener("blur", remove_focus_on_this_profil)
         })
 }
 

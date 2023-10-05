@@ -6,9 +6,10 @@ function hideDropdown() {
     document.getElementById("myDropdown").style.display = "none";
 }
 
-let show_profil_button = document.querySelector(".profil-container")
 
-show_profil_button.addEventListener("keyup", controle_key_press_on_profil_button)
+let show_profil_element = document.querySelector(".profil-container")
+
+show_profil_element.addEventListener("keyup", controle_key_press_on_profil_button)
 
 function controle_key_press_on_profil_button(event)
 {
