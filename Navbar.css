@@ -85,3 +85,8 @@ nav > div {
 {
     font-size: 4em;
 }
+
+a[href="main.html"]{
+    color: white;
+    text-decoration: none;
+}

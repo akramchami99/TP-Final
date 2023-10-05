@@ -27,9 +27,12 @@
     </header>
 
     <main>
-        <div><input type="search" id="champ_de_recherche" placeholder="Recherche par Prénom..."></div>
+        <div>
+            <label for="champ_de_recherche" class="masquage_accessible">Recherche par prénom</label>
+            <input type="search" id="champ_de_recherche" placeholder="Recherche par Prénom...">
+        </div>
         <div id="profils_box">
-            <article class="profil_design" id="new_profil"><i class="fa-solid fa-plus"></i></article>
+            <article class="profil_design" id="new_profil" tabindex="0" role="button"><i class="fa-solid fa-plus"></i></article>
         </div>
     </main>
 
