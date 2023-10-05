@@ -15,7 +15,6 @@ function focus_on_this_profil(event)
 
 function remove_focus_on_this_profil(event)
 {
-    console.log(event.target)
     let all_user_prenom = document.querySelectorAll(".user_prenom")
     let prenom_under_mouse = event.target.innerHTML
     all_user_prenom.forEach(prenom => 

@@ -8,9 +8,7 @@ function hideDropdown() {
 
 
 let show_profil_element = document.querySelector(".profil-container")
-
 show_profil_element.addEventListener("keyup", controle_key_press_on_profil_button)
-
 function controle_key_press_on_profil_button(event)
 {
     if(event.which === 13)
@@ -25,3 +23,6 @@ function controle_key_press_on_profil_button(event)
         element_à_afficher_ou_non.style.display == "none" ? element_à_afficher_ou_non.style.display = "flex" : element_à_afficher_ou_non.style.display = "none"
     }
 }
+
+let element_triche = document.querySelector("#title")
+element_triche.addEventListener("focus", hideDropdown)
